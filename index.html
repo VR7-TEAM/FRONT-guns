@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VR7 TEAM</title>
+  <link rel="stylesheet" href="HelloCss.css" />
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 50px;
+    }
+
+    .member-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: var(--primary);
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover img {
+      transform: rotate(2deg) scale(1.05);
+    }
+
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      color: white;
+    }
+
+    .member-role {
+      font-size: 0.95rem;
+      margin-top: 5px;
+      opacity: 0.7;
+    }
+
+    .discord-button {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    .discord-button a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .discord-button a:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="navbar">
+  <div class="nav-container">
+    <a href="scripts.html">scripts</a>
+    <a href="pc.html">هاكات PC</a>
+    <a href="android.html">هاكات android</a>
+  </div>
+</div>
+
+<div class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-items">
+    <li><a href="scripts.html">scripts (سكربتات سيرفر)</a></li>
+    <li><a href="pc.html">هاكات PC</a></li>
+    <li><a href="android.html">هاكات android </a></li>
+  </ul>
+</div>
+
+
+
+
+  <div class="content">
+    <div class="header">
+      <h1 style="color: var(--primary);">VR7 TEAM</h1>
+    </div>
+
+    <div class="team-grid">
+
+
+<!-- عضو 1 -->
+      <a href="https://discord.com/users/1196473067258527794" target="_blank" class="member-card">
+        <img src="iMAGE/vr7.png" alt="VR7">
+        <p class="member-name">VR7</p>
+        <p class="member-role">Owner</p>
+      </a>
+
+      <!-- عضو 2 -->
+      <a href="https://discord.com/users/274366167093608450" target="_blank" class="member-card">
+        <img src="iMAGE/dryfd.png" alt="DRYFD">
+        <p class="member-name">DRYFD</p>
+        <p class="member-role">Web Developer</p>
+      </a>
+
+      <!-- عضو 3 -->
+      <a href="https://discord.com/users/494786823877296128" target="_blank" class="member-card">
+        <img src="iMAGE/7sone.png" alt="7sone">
+        <p class="member-name">7sone</p>
+        <p class="member-role">Script Developer</p>
+      </a>
+
+      <!-- عضو 4 -->
+      <a href="https://discord.com/users/1319184361635188827" target="_blank" class="member-card">
+        <img src="iMAGE/front.png" alt="FRONT">
+        <p class="member-name">FRONT</p>
+        <p class="member-role">Developer</p>
+      </a>
+
+            <!-- عضو 4 -->
+      <a href="https://discord.com/users/1350270448830513183" target="_blank" class="member-card">
+        <img src="iMAGE/bof.png" alt="FRONT">
+        <p class="member-name">BOF</p>
+        <p class="member-role">Develpor Hacker , Android , IOS</p>
+      </a>
+
+    </div>
+
+    <div class="discord-button">
+      <a href="https://discord.gg/vr7" target="_blank">انضم إلى سيرفر الديسكورد</a>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", function () {
+      menuToggle.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+      document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+    });
+
+    // إغلاق القائمة عند الضغط خارجها
+    document.addEventListener("click", function (e) {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
